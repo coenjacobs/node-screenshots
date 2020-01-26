@@ -3,6 +3,8 @@ const captureWebsite = require('capture-website')
 const app = express()
 const port = 3000
 
+app.use('/images', express.static('images'))
+
 app.get('/screenshot', (request, response) => {
 	let url = request.query.url;
 	let target = 'images/screenshot-' + Date.now().toString() + '.png';
