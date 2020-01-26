@@ -1,0 +1,8 @@
+{
+  "name": "node-screenshots",
+  "description": "Simple API endpoint that takes a screenshot of the provided url.",
+  "dependencies": {
+    "capture-website": "^0.8.1",
+    "express": "^4.17.1"
+  }
+}
