@@ -1,5 +1,5 @@
 const express = require('express')
-const captureWebsite = require('capture-website')
+const capture = require('capture-website')
 const app = express()
 const port = 3000
 
@@ -9,7 +9,7 @@ app.get('/screenshot', (request, response) => {
 	let url = request.query.url;
 	let target = 'images/screenshot-' + Date.now().toString() + '.png';
 
-	captureWebsite.file(url,target, {
+	capture.file(url,target, {
 		headers: {
 			'Cookie-Installing-Permission': 'all',
 		}
