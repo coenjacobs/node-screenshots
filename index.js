@@ -14,17 +14,19 @@ app.get('/screenshot', (request, response) => {
 			'Cookie-Installing-Permission': 'all',
 		}
 	}).then(function(result) {
-  		response.json({
+  		response.status(201).json({
+			'success': true,
   			'url': url,
   			'screenshot': target,
   		});
 	}, function(err) {
-		response.json({
+		console.log(err);
+		response.status(500).json({
+			'success': false,
 			'error': 'Something went wrong, you broke it',
 		});
 	});
-
-})
+});
 
 app.listen(port, (err) => {
   if (err) {
